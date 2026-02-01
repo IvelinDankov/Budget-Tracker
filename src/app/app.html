@@ -1,5 +1,9 @@
+@if (openDialog) {
+  <app-new-income (dialog)="onSelectDialog($event)" (closeDialog)="closeIncomeDialog()" />
+}
+
 <div class="container">
-  <app-aside />
+  <app-aside (dialog)="onSelectDialog($event)" />
   <main class="main">
     <app-header />
     <app-charts />

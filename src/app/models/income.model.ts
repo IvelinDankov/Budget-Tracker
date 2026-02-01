@@ -1,10 +1,8 @@
-export type Type = 'salary' | 'freelance' | 'bonus' | 'investment';
+export type Category = 'salary' | 'freelance' | 'bonus' | 'investment';
 
 export interface Income {
   id: string;
   amount: number;
-  type: Type;
+  category: Category;
   description: string;
 }
-
-/

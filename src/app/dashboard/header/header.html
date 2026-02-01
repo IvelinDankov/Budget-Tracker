@@ -33,7 +33,7 @@
       </div>
       <p>Total Balace</p>
       <div class="balance">
-        <p>€635.00</p>
+        <p>{{ totalBalance() | currency: '€' }}</p>
         <p>+3.5%</p>
       </div>
     </div>
@@ -70,7 +70,7 @@
 
       <p>Total Income</p>
       <div class="balance">
-        <p>€1200.00</p>
+        <p>{{ totalIncome() | currency: '€' }}</p>
         <p>+3.5%</p>
       </div>
     </div>
@@ -135,7 +135,7 @@
       </div>
       <p>Total Expenses</p>
       <div class="balance">
-        <p>€635.00</p>
+        <p>{{ totalExpenses() | currency: '€' }}</p>
         <p>+3.5%</p>
       </div>
     </div>
