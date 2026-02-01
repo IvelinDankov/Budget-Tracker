@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { Component, output } from '@angular/core';
 
 @Component({
   selector: 'app-aside',
@@ -8,8 +8,13 @@ import { Component, input, output } from '@angular/core';
 })
 export class Aside {
   dialog = output<boolean>();
+  outcomeDialog = output<boolean>();
 
   onAddIncome() {
     this.dialog.emit(true);
+  }
+
+  onAddExpense() {
+    this.outcomeDialog.emit(true);
   }
 }

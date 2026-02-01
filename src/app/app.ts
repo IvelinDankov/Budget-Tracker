@@ -17,12 +17,20 @@ export class App {
   protected readonly title = signal('Budget-Tracker');
 
   openDialog = false;
+  openOutcomeDialog = false;
 
   onSelectDialog(open: any) {
     this.openDialog = open;
   }
+  onSelectOutcomeDialog(open: any) {
+    this.openOutcomeDialog = open;
+  }
 
   closeIncomeDialog() {
     this.openDialog = false;
+  }
+
+  onCloseDialog() {
+    this.openOutcomeDialog = false;
   }
 }

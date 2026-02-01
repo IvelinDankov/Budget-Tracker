@@ -1,20 +1,29 @@
 <!-- INCOME FORM DIALOG -->
 
-<div class="backdrop"></div>
+<div class="backdrop" (click)="onCloseDialog()"></div>
 <dialog open>
-  <form method="dialog">
+  <form #form="ngForm" method="dialog" (ngSubmit)="onAddExpense(form)">
     <div class="modal__header">
       <h2>Add new Income</h2>
     </div>
     <div class="modal__conent">
       <div class="form__group">
         <label for="expense-amount">Amount (EUR)</label>
-        <input type="number" name="amount" id="expense-amount" step="0.01" />
+        <input
+          type="number"
+          name="amount"
+          id="expense-amount"
+          step="0.01"
+          ngModel
+          required
+          min="0.01"
+          max="100000"
+        />
       </div>
 
       <div class="form__group">
         <label for="expense-category">category</label>
-        <select>
+        <select ngModel name="category" required="true">
           <option value="">Choose...</option>
           <option value="food">Food</option>
           <option value="transport">Transport</option>
@@ -35,12 +44,15 @@
           id="description"
           id="expense-description"
           placeholder="Mountly salary"
+          ngModel
         />
       </div>
     </div>
 
     <div class="modal__actions">
-      <button class="btn__cancel" type="button" value="cancel">Cancel</button>
+      <button class="btn__cancel" type="button" value="cancel" (click)="onCloseDialog()">
+        Cancel
+      </button>
       <button type="submit">Save Expense</button>
     </div>
   </form>
