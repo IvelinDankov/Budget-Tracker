@@ -13,6 +13,7 @@ export interface Expense {
   amount: number;
   category: Category;
   description: string;
+  date: string;
 }
 
 /* 

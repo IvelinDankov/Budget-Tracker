@@ -25,8 +25,10 @@ export class NewExpenses {
       amount: amount,
       category,
       description,
+      date: '',
     };
 
     this.budgetService.addExpense(newExpense);
+    this.onCloseDialog();
   }
 }

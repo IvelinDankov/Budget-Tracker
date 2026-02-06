@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject } from '@angular/core';
+import { Budget } from '../budget.js';
 
 @Component({
   selector: 'app-transactions',
@@ -7,5 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './transactions.scss',
 })
 export class Transactions {
+  private budgetService = inject(Budget);
 
+  transactions = computed(() => this.budgetService.allTransactions());
 }

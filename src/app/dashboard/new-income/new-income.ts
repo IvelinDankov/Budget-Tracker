@@ -30,6 +30,7 @@ export class NewIncome {
       amount: amount.value,
       category: category.value,
       description: description.value,
+      date: new Date().toISOString(),
     };
 
     this.budgetService.addIncome(newIncome);
